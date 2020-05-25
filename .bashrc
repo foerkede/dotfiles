@@ -7,8 +7,8 @@
 
 PS1='[\u@\h \W]\$ '
 
-eval $(keychain --eval --quiet id_rsa)
 command -v neofetch >/dev/null 2>&1 && neofetch
+[[ -f ~/.ssh/id_rsa ]] && eval $(keychain --eval --quiet id_rsa)
 [[ -f ~/ansible/make-completion.sh ]] && source ~/ansible/make-completion.sh
 
 
