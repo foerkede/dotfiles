@@ -7,6 +7,15 @@
 
 PS1='[\u@\h \W]\$ '
 
+### From Debian .bashrc
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+###
+
 command -v neofetch >/dev/null 2>&1 && neofetch
 [[ -f ~/.ssh/id_rsa ]] && eval $(keychain --eval --quiet id_rsa)
 [[ -f ~/ansible/make-completion.sh ]] && source ~/ansible/make-completion.sh
