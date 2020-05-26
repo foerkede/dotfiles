@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '
 if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 else
@@ -72,7 +72,7 @@ unset use_color safe_term match_lhs sh
 #
 
 alias ls='ls --color=auto'
-alias ll='ls -lAh'
+alias ll='ls -lAh --group-directories-first'
 alias lll='ll | less'
 alias ..="cd .."
 alias cp='cp -aiv'
