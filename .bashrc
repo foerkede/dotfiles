@@ -19,8 +19,8 @@ shopt -s expand_aliases
 
 complete -cf sudo
 
-command -v neofetch >/dev/null 2>&1 && neofetch
-[[ -f ~/.ssh/id_rsa ]] && eval $(keychain --eval --quiet id_rsa)
+command -v neofetch > /dev/null 2>&1 && neofetch
+command -v keychain > /dev/null 2>&1 && [[ -f ~/.ssh/id_rsa ]] && eval $(keychain --eval --quiet id_rsa)
 [[ -f ~/ansible/make-completion.sh ]] && source ~/ansible/make-completion.sh
 
 
@@ -86,16 +86,18 @@ alias mkdir="mkdir -pv"
 alias wget="wget -c"
 alias bashreload='source ~/.bashrc && echo Bash config reloaded;'
 
-# bare git repo for dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dotfilesa='dotfiles add'
-alias dotfilesc='dotfiles commit -m'
-
 ### Git
 gs="git status"
 gd="git diff"
 gc="git commit -m "
 gca="git add . && git commit -m "
+
+# bare git repo for dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiless='dotfiles status'
+alias dotfilesa='dotfiles add'
+alias dotfilesc='dotfiles commit -m'
+alias dotfilesp='dotfiles push'
 
 ### Docker
 alias dtail='docker logs -tf --tail='50' '
