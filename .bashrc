@@ -85,12 +85,19 @@ alias psgrep="ps | grep -v grep | grep -i -e VSZ -e"
 alias mkdir="mkdir -pv"
 alias wget="wget -c"
 alias bashreload='source ~/.bashrc && echo Bash config reloaded;'
+alias rsyncc="rsync -avhP"
+alias diskpoweroff="udisksctl power-off -b"
+alias vi="vim"
 
 ### Git
-gs="git status"
-gd="git diff"
-gc="git commit -m "
-gca="git add . && git commit -m "
+alias gs="git status"
+alias gd="git diff"
+alias gc="git commit -m"
+alias ga="git add -A"
+alias gac="ga && gc"
+alias gca="ga && gc"
+alias gp="git push"
+alias gt="git log --graph --oneline --all"
 
 # bare git repo for dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
